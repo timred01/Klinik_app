@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
+import '/service/pasien_service.dart';
+import '../Pasien/pasien_form.dart';
 import '/../model/pasien.dart';
-import '/../ui/Pasien/pasien_detail.dart';
-import '/../ui/Pasien/pasien_form.dart';
-import '/../ui/Pasien/pasien_item.dart';
 import '../widget/sidebar.dart';
+import 'pasien_item.dart';
 
-class pasienPage extends StatefulWidget {
-  const pasienPage({super.key});
+class PasienPage extends StatefulWidget {
+  const PasienPage({super.key});
 
   @override
-  State<pasienPage> createState() => _pasienPageState();
+  State<PasienPage> createState() => _PasienPageState();
 }
 
-class _pasienPageState extends State<pasienPage> {
+class _PasienPageState extends State<PasienPage> {
+  Stream<List<Pasien>> getList() async* {
+    List<Pasien> data = await PasienService().listData();
+    yield data;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Sidebar(),
       appBar: AppBar(
-        title: Text('Data Pasien'),
+        title: const Text("Data Pasien"),
         actions: [
           GestureDetector(
             child: const Icon(Icons.add),
@@ -29,17 +34,28 @@ class _pasienPageState extends State<pasienPage> {
           )
         ],
       ),
-      body: ListView(
-        children: [
-          PasienItem(
-              pasien: Pasien(
-            nomor_rm: '15210450',
-            nama: 'ALIF FIRMAN HAKIM',
-            tanggal_lahir: '01 JANUARI 2000',
-            nomor_telepon: '08123456789',
-            alamat: 'firmanhakimalif@gmail.com',
-          ))
-        ],
+      body: StreamBuilder(
+        stream: getList(),
+        builder: (context, AsyncSnapshot snapshot) {
+          if (snapshot.hasError) {
+            return Text(snapshot.error.toString());
+          }
+          if (snapshot.connectionState != ConnectionState.done) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          if (!snapshot.hasData &&
+              snapshot.connectionState == ConnectionState.done) {
+            return Text('Data Kosong');
+          }
+          return ListView.builder(
+            itemCount: snapshot.data.length,
+            itemBuilder: (context, index) {
+              return PasienItem(pasien: snapshot.data[index]);
+            },
+          );
+        },
       ),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '/service/poli_service.dart';
-import '../Poli/poli_page.dart';
+import 'package:klinik_app/service/poli_service.dart';
+import 'package:klinik_app/ui/Poli/poli_form_update.dart';
+import 'package:klinik_app/ui/Poli/poli_page.dart';
 import '/../model/poli.dart';
-import 'poli_form_update.dart';
 
 class PoliDetail extends StatefulWidget {
   final Poli poli;
@@ -83,6 +83,7 @@ class _PoliDetailState extends State<PoliDetail> {
                           await PoliService()
                               .hapus(snapshot.data)
                               .then((value) {
+                            Navigator.pop(context);
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(

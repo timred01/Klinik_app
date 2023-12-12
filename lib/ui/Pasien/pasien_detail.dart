@@ -90,7 +90,7 @@ class _pasienDetailState extends State<pasienDetail> {
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => pasienPage()));
+                      MaterialPageRoute(builder: (context) => PasienPage()));
                 },
                 child: Text("YA"),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.red),

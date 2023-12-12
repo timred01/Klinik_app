@@ -30,28 +30,12 @@ class Sidebar extends StatelessWidget {
                 "Alif Firman Hakim",
                 style: TextStyle(fontSize: 20),
               ),
-
               Text("admin@gmail.com"),
               SizedBox(
                 height: 20,
               ),
-              // Padding(padding: EdgeInsets.only(bottom: 10))
             ],
           ),
-
-          // UserAccountsDrawerHeader(
-          // currentAccountPicture: CircleAvatar(
-          //   child: ClipOval(
-          //     child: Image.asset('assets/img/user.png'),
-          //   ),
-          // ),
-          //   accountName: const Text("Alif Firman Hakim"),
-          //   accountEmail: const Text("admin@gmail.com"),
-          //   decoration: const BoxDecoration(
-          //       color: Colors.blueAccent,
-          //       image: DecorationImage(
-          //           image: AssetImage("assets/img/bg.jpg"), fit: BoxFit.cover)),
-          // ),
           ListTile(
             leading: Icon(Icons.home),
             title: Text("Beranda"),
@@ -81,7 +65,7 @@ class Sidebar extends StatelessWidget {
             title: Text("Pasien"),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => pasienPage()));
+                  MaterialPageRoute(builder: (context) => PasienPage()));
             },
           ),
           ListTile(

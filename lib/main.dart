@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:klinik_app/ui/beranda.dart';
 import 'package:klinik_app/ui/login.dart';
 import 'helpers/user_info.dart';
 
@@ -9,8 +8,7 @@ Future<void> main() async {
   print(token);
 
   runApp(MaterialApp(
-    title: "Klinik APP",
-    debugShowCheckedModeBanner: false,
-    home: token == null ? Login() : Beranda(),
-  ));
+      title: "Klinik App_by AFH",
+      debugShowCheckedModeBanner: false,
+      home: Login()));
 }

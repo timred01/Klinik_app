@@ -100,7 +100,6 @@ class _PasienUpdateFormState extends State<PasienUpdateForm> {
               tanggal_lahir: _tglPasienCtrl.text,
               nomor_telepon: _telponPasienCtrl.text,
               alamat: _alamatPasienCtrl.text);
-          Navigator.pop(context);
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(

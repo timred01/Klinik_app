@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/service/poli_service.dart';
 import '../../model/poli.dart';
-// import '../Poli/poli_detail.dart';
 import '../Poli/poli_item.dart';
 import '../Poli/poli_form.dart';
 import '../widget/sidebar.dart';
