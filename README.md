@@ -2,15 +2,12 @@
 
 <img src="assets/img/logo_ubsi.png/" width="200px" alt=""><br>
 
-Klinik App adalah aplikasi klinik berbasis Mobile dengan menggunakan framework Flutter. Terdapat 3 menu utama yang terdapat pada aplikasi ini yakni Poli, Pegawai dan Pasien.
+Klinik App adalah aplikadi klinik berbais mobile dengab menggunakan franework Flutter,
+terdapat 3 menu utama yang terdapat pada aplikasi inibyakni Poli, Pegawai, Pasien.
 
 ## 💻 Pengguna Sistem
 
-Pengguna yang dapat memakai sistem ini adalah hanya Admin.
-
-## 🔥 Skenario Kebutuhan Pengguna
-
-### Admin
+Pengguna yang dapat mrmakai sistem ini janyalah admin
 
 <ol>
   <li>Admin dapat melakukan login.</li>
@@ -43,13 +40,11 @@ Pengguna yang dapat memakai sistem ini adalah hanya Admin.
 
 ## 📝 Prerequisite
 
-Untuk menjalankan aplikasi ini disarankan untuk menyiapkan aplikasi berikut ini :
+untuk menjalankan aplikasi ini disarnkan untuk menyiapkan aplikasi berikut ini :
 
-- [x] Android Studio Giraffe <code>2022.03.1 Patch 1</code>
-- [x] Flutter <code>3.13.2</code>
-- [x] Dart <code>3.1.0</code>
-- [x] Java JDK <code>19.0.0</code>
-- [x] Git <code>2.35.1</code>
+- Android Studio Giraffe <code>2022.03.1 patch 1</code>
+- Android Studio Giraffe <code>2022.03.1 patch 2</code>
+- Android Studio Giraffe <code>2022.03.1 patch 3</code>
 
 ## 📜 Credit & License
 
